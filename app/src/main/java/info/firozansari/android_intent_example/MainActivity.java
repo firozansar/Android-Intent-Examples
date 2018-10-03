@@ -31,8 +31,7 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnFr
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Nothing here!", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                startActivity(new Intent(MainActivity.this, UserOverviewActivity.class));
             }
         });
     }

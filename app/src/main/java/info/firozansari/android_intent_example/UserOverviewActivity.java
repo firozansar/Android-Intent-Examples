@@ -21,7 +21,7 @@ public class UserOverviewActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Nothing here!", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Nothing here!", Snackbar.LENGTH_SHORT)
                         .setAction("Action", null).show();
             }
         });
