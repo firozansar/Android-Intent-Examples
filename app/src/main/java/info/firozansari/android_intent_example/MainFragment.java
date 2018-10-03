@@ -24,9 +24,7 @@ import info.firozansari.android_intent_example.utils.PhoneIntents;
 import info.firozansari.android_intent_example.utils.ShareIntents;
 import info.firozansari.android_intent_example.utils.SystemIntents;
 
-/**
- * A placeholder fragment containing a simple view.
- */
+
 public class MainFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
@@ -83,18 +81,18 @@ public class MainFragment extends Fragment {
         demoItemList.add(new DemoItem(res.getString(R.string.pick_contact_with_phone), PhoneIntents.newPickContactWithPhoneIntent()));
 
         // GeoIntents
-        demoItemList.add(new DemoItem(res.getString(R.string.map_of), GeoIntents.newMapsIntent("1 rue du louvre 75000 Paris", "Le Louvre, Paris")));
-        demoItemList.add(new DemoItem(res.getString(R.string.map_at), GeoIntents.newMapsIntent(43.481055f, -1.561959f, "Biarritz, France")));
-        demoItemList.add(new DemoItem(res.getString(R.string.navigate_to_address), GeoIntents.newNavigationIntent("1 rue du louvre 75000 Paris")));
-        demoItemList.add(new DemoItem(res.getString(R.string.navigate_to_location), GeoIntents.newNavigationIntent(43.481055f, -1.561959f)));
-        demoItemList.add(new DemoItem(res.getString(R.string.streetview_at_location), GeoIntents.newStreetViewIntent(43.481055f, -1.561959f)));
+        demoItemList.add(new DemoItem(res.getString(R.string.map_of), GeoIntents.newMapsIntent("10 Downing Street, London", "Prime Minister's Residence")));
+        demoItemList.add(new DemoItem(res.getString(R.string.map_at), GeoIntents.newMapsIntent(53.600910f, -2.547780f, "Horwich, Bolton")));
+        demoItemList.add(new DemoItem(res.getString(R.string.navigate_to_address), GeoIntents.newNavigationIntent("Manchester Piccadilly Garden")));
+        demoItemList.add(new DemoItem(res.getString(R.string.navigate_to_location), GeoIntents.newNavigationIntent(53.600910f, -2.547780f)));
+        demoItemList.add(new DemoItem(res.getString(R.string.streetview_at_location), GeoIntents.newStreetViewIntent(53.600910f, -2.547780f)));
 
         // MediaIntents
         demoItemList.add(new DemoItem(res.getString(R.string.play_image), MediaIntents.newPlayImageIntent("http://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Biarritz-Plage.JPG/1920px-Biarritz-Plage.JPG")));
         demoItemList.add(new DemoItem(res.getString(R.string.play_audio), MediaIntents.newPlayAudioIntent("http://www.stephaniequinn.com/Music/Allegro%20from%20Duet%20in%20C%20Major.mp3")));
         demoItemList.add(new DemoItem(res.getString(R.string.play_video), MediaIntents.newPlayVideoIntent("http://mirror.bigbuckbunny.de/peach/bigbuckbunny_movies/big_buck_bunny_480p_h264.mov")));
         demoItemList.add(new DemoItem(res.getString(R.string.play_video_youtube), MediaIntents.newPlayYouTubeVideoIntent("b_yiWIXBI7o")));
-        demoItemList.add(new DemoItem(res.getString(R.string.browse_web), MediaIntents.newOpenWebBrowserIntent("http:/firozansari.info")));
+        demoItemList.add(new DemoItem(res.getString(R.string.browse_web), MediaIntents.newOpenWebBrowserIntent("http://firozansari.info")));
         demoItemList.add(new DemoItem(res.getString(R.string.take_pic), MediaIntents.newTakePictureIntent(Environment.getExternalStorageDirectory().toString() + "/temp.jpg")));
         demoItemList.add(new DemoItem(res.getString(R.string.select_pic), MediaIntents.newSelectPictureIntent()));
 
@@ -105,7 +103,7 @@ public class MainFragment extends Fragment {
         demoItemList.add(new DemoItem(res.getString(R.string.share), ShareIntents.newShareTextIntent("My subject", "My message", getString(R.string.share_dialog_title))));
 
         // SystemIntents
-        demoItemList.add(new DemoItem(res.getString(R.string.app_store), SystemIntents.newMarketForAppIntent(getActivity(), "fr.marvinlabs.coverartwallpaper")));
+        demoItemList.add(new DemoItem(res.getString(R.string.app_store), SystemIntents.newGooglePlayIntent(getActivity(), "uk.co.topcashback.topcashback")));
 
         itemAdapter.swapList(demoItemList);
 
