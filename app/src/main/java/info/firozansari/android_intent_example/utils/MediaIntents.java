@@ -10,7 +10,6 @@ import java.io.File;
 /**
  * Provides factory methods to create intents to view / open / ... medias
  *
- * @author Vincent Prat @ MarvinLabs
  */
 public class MediaIntents {
 
@@ -180,8 +179,7 @@ public class MediaIntents {
         if (!url.startsWith("https://") && !url.startsWith("http://")) {
             url = "http://" + url;
         }
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-        return intent;
+        return new Intent(Intent.ACTION_VIEW, Uri.parse(url));
     }
 
     /**

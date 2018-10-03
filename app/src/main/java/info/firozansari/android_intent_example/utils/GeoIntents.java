@@ -7,7 +7,6 @@ import android.text.TextUtils;
 /**
  * Provides factory methods to create intents to work with geographical data (search locations for instance)
  *
- * @author Vincent Prat @ MarvinLabs
  */
 public class GeoIntents {
 

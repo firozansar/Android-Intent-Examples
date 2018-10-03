@@ -50,7 +50,7 @@ public class MainFragment extends Fragment {
         ItemRecyclerView = (RecyclerView) mView.findViewById(R.id.item_recycler);
         LinearLayoutManager recyclerLayoutManager = new LinearLayoutManager(getActivity());
         ItemRecyclerView.setLayoutManager(recyclerLayoutManager);
-        itemAdapter = new ItemAdapter(getActivity());
+        itemAdapter = new ItemAdapter(getActivity(), mListener);
         ItemRecyclerView.setAdapter(itemAdapter);
 
         return mView;
@@ -121,6 +121,12 @@ public class MainFragment extends Fragment {
             throw new ClassCastException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
     }
 
 

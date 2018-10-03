@@ -6,7 +6,6 @@ import android.net.Uri;
 /**
  * Provides factory methods to create intents to send emails
  *
- * @author Vincent Prat @ MarvinLabs
  */
 public class EmailIntents {
 

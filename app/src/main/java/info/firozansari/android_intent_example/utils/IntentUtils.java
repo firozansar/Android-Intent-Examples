@@ -11,7 +11,6 @@ import java.util.List;
 /**
  * Provides utility functions to work with intents
  *
- * @author Vincent Prat @ MarvinLabs
  */
 public class IntentUtils {
 

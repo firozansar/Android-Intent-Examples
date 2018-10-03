@@ -7,7 +7,6 @@ import android.net.Uri;
 /**
  * Provides factory methods to create intents to do some system tasks such as opening the market app, ...
  *
- * @author Vincent Prat @ MarvinLabs
  */
 public class SystemIntents {
 

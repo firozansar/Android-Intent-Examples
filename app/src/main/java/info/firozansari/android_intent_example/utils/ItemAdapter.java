@@ -11,17 +11,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import info.firozansari.android_intent_example.DemoItem;
+import info.firozansari.android_intent_example.MainFragment;
 import info.firozansari.android_intent_example.R;
 
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>{
 
     private List<DemoItem> itemList = new ArrayList<>();
     private Context context;
+    private MainFragment.OnFragmentInteractionListener listener;
 
 
-    public ItemAdapter(Context context) {
+    public ItemAdapter(Context context, MainFragment.OnFragmentInteractionListener listener) {
         this.context = context;
-
+        this.listener = listener;
     }
 
 
@@ -60,16 +62,32 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>{
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public TextView issueTitle;
 
         public ViewHolder(View v) {
             super(v);
             issueTitle = (TextView) v.findViewById(R.id.item_tv);
+            issueTitle.setOnClickListener(this);
         }
 
+        @Override
+        public void onClick(View v) {
+            DemoItem item = getItem(getAdapterPosition());
+            listener.onFragmentInteraction(item.getIntent());
+        }
     }
+
+    private DemoItem getItem(int adapterPosition) {
+
+        if (adapterPosition >= 0) {
+            return itemList.get(adapterPosition);
+        }
+
+        return null;
+    }
+
 
     public void swapList(List<DemoItem> demoItemList) {
         if(demoItemList != null) {

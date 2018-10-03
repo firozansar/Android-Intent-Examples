@@ -12,8 +12,6 @@ import android.text.TextUtils;
 /**
  * Provides factory methods to create intents to send SMS, MMS and call phone numbers
  *
- * @author Vincent Prat @ MarvinLabs
- * @todo MMS intents
  */
 public class PhoneIntents {
 
@@ -161,12 +159,7 @@ public class PhoneIntents {
      */
     @SuppressWarnings("deprecation")
     public static Intent newPickContactIntent(String scope) {
-        Intent intent;
-        if (isContacts2ApiSupported()) {
-            intent = new Intent(Intent.ACTION_PICK, Uri.parse("content://com.android.contacts/contacts"));
-        } else {
-            intent = new Intent(Intent.ACTION_PICK, Contacts.People.CONTENT_URI);
-        }
+        Intent intent = new Intent(Intent.ACTION_PICK, Uri.parse("content://com.android.contacts/contacts"));
 
         if (!TextUtils.isEmpty(scope)) {
             intent.setType(scope);
@@ -180,20 +173,8 @@ public class PhoneIntents {
      */
     @SuppressWarnings("deprecation")
     public static Intent newPickContactWithPhoneIntent() {
-        Intent intent;
-        if (isContacts2ApiSupported()) {
-            intent = newPickContactIntent(ContactsContract.CommonDataKinds.Phone.CONTENT_TYPE);
-        } else {
-            // pre Eclair, use old contacts API
-            intent = newPickContactIntent(Contacts.Phones.CONTENT_TYPE);
-        }
-        return intent;
+
+        return newPickContactIntent(ContactsContract.CommonDataKinds.Phone.CONTENT_TYPE);
     }
 
-    /**
-     * Does the current device support the Post eclair contacts API?
-     */
-    private static boolean isContacts2ApiSupported() {
-        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.ECLAIR;
-    }
 }

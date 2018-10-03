@@ -5,7 +5,6 @@ import android.content.Intent;
 /**
  * Provides factory methods to create intents to share stuff
  *
- * @author Vincent Prat @ MarvinLabs
  */
 public class ShareIntents {
 
