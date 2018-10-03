@@ -136,8 +136,18 @@ public class PhoneIntents {
      * Pick contact from phone book
      */
     public static Intent newPickContactIntent() {
-        return newPickContactIntent(null);
+        return new Intent(Intent.ACTION_VIEW,
+                Uri.parse("content://contacts/people/"));
     }
+
+    /**
+     * Edit a contact from phone book
+     */
+    public static Intent editContactIntent() {
+        return new Intent(Intent.ACTION_EDIT,
+                Uri.parse("content://contacts/people/1"));
+    }
+
 
     /**
      * Pick contact from phone book

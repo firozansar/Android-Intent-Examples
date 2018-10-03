@@ -199,12 +199,10 @@ public class MediaIntents {
      * Creates an intent that will launch the camera to take a picture that's saved to a temporary file so you can use
      * it directly without going through the gallery.
      *
-     * @param tempFile the file that should be used to temporarily store the picture
      * @return the intent
      */
-    public static Intent newTakePictureIntent(String tempFile) {
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(new File(tempFile)));
+    public static Intent newTakePictureIntent() {
+        Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
         return intent;
     }
 

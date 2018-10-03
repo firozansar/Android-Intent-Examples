@@ -8,6 +8,7 @@
     <string name="send_sms_to">Send SMS to 07957941679</string>
     <string name="send_sms">Send SMS</string>
     <string name="pick_contact">Pick a contact</string>
+    <string name="edit_contact">Edit a contact</string>
     <string name="pick_contact_with_phone">Pick a contact with phone</string>
 
     <string name="map_of">Prime Minister\'s Residence</string>
@@ -20,7 +21,7 @@
     <string name="play_audio">Play a sound from URL</string>
     <string name="play_video">Play a video from URL</string>
     <string name="play_video_youtube">Play YouTube video #b_yiWIXBI7o</string>
-    <string name="browse_web">Browse firozansari.info</string>
+    <string name="browse_web">Browse a website</string>
     <string name="take_pic">Take a photo</string>
     <string name="select_pic">Select a picture</string>
 
@@ -30,4 +31,5 @@
     <string name="share_dialog_title">Share this!</string>
 
     <string name="app_store">Open TCB app at Play Store</string>
+    <string name="title_activity_user_overview">User Overview</string>
 </resources>
