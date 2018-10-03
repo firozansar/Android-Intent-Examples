@@ -29,5 +29,5 @@
     <string name="share">Share</string>
     <string name="share_dialog_title">Share this!</string>
 
-    <string name="app_store">Open app store</string>
+    <string name="app_store">Open TCB app at Play Store</string>
 </resources>

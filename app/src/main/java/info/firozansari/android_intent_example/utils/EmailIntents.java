@@ -9,6 +9,8 @@ import android.net.Uri;
  */
 public class EmailIntents {
 
+    private static final String MIME_TYPE_EMAIL = "message/rfc822";
+
     /**
      * Create an intent to send an email to a single recipient
      *
@@ -56,5 +58,4 @@ public class EmailIntents {
         return intent;
     }
 
-    private static final String MIME_TYPE_EMAIL = "message/rfc822";
 }

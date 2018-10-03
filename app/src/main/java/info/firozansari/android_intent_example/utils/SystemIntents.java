@@ -16,7 +16,7 @@ public class SystemIntents {
      * @param context The context associated to the application
      * @return the intent
      */
-    public static Intent newMarketForAppIntent(Context context) {
+    public static Intent newGooglePlayIntent(Context context) {
         String packageName = context.getApplicationContext().getPackageName();
         return newGooglePlayIntent(context, packageName);
     }
