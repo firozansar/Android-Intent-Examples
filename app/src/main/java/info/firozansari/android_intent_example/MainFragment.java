@@ -5,17 +5,21 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Environment;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import info.firozansari.android_intent_example.utils.Constant;
 import info.firozansari.android_intent_example.utils.EmailIntents;
 import info.firozansari.android_intent_example.utils.GeoIntents;
 import info.firozansari.android_intent_example.utils.ItemAdapter;
@@ -28,6 +32,8 @@ import info.firozansari.android_intent_example.utils.SystemIntents;
 public class MainFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
+
+    private TextView textView;
 
     public RecyclerView ItemRecyclerView;
 
@@ -45,6 +51,17 @@ public class MainFragment extends Fragment {
                              Bundle savedInstanceState) {
         View mView =  inflater.inflate(R.layout.fragment_main, container, false);
 
+        textView = (TextView) mView.findViewById(R.id.explain_tv);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setMessage(getIntentExplanationText());
+                builder.setCancelable(true);
+                builder.show();
+
+            }
+        });
         ItemRecyclerView = (RecyclerView) mView.findViewById(R.id.item_recycler);
         LinearLayoutManager recyclerLayoutManager = new LinearLayoutManager(getActivity());
         ItemRecyclerView.setLayoutManager(recyclerLayoutManager);
@@ -62,12 +79,14 @@ public class MainFragment extends Fragment {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                populateView();
+                itemAdapter.swapList(getDemoItems());
             }
-        }, 1000);
+        }, 500);
     }
 
-    private void populateView() {
+
+    @NonNull
+    private List<DemoItem> getDemoItems() {
         final Resources res = getResources();
         final List<DemoItem> demoItemList = new ArrayList<DemoItem>();
 
@@ -105,9 +124,31 @@ public class MainFragment extends Fragment {
 
         // SystemIntents
         demoItemList.add(new DemoItem(res.getString(R.string.app_store), SystemIntents.newGooglePlayIntent(getActivity(), "uk.co.topcashback.topcashback")));
+        return demoItemList;
+    }
 
-        itemAdapter.swapList(demoItemList);
-
+    @NonNull
+    private String getIntentExplanationText() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("An Intent is a messaging object you can use to request an action from another app component.");
+        stringBuilder.append(Constant.LINE_SEPARATOR);
+        stringBuilder.append("It's mainly used to start activity or service or deliver a broadcast.");
+        stringBuilder.append(Constant.LINE_SEPARATOR);
+        stringBuilder.append("Explicit intents specify which app component will satisfy the intent but implicit intents do not name a specific component");
+        stringBuilder.append(Constant.LINE_SEPARATOR);
+        stringBuilder.append("The primary information contained in an Intent is the following:");
+        stringBuilder.append(Constant.LINE_SEPARATOR);
+        stringBuilder.append("1. Component name");
+        stringBuilder.append(Constant.LINE_SEPARATOR);
+        stringBuilder.append("2. Action (such as view or send");
+        stringBuilder.append(Constant.LINE_SEPARATOR);
+        stringBuilder.append("3. Data (URI or MIME type");
+        stringBuilder.append(Constant.LINE_SEPARATOR);
+        stringBuilder.append("4. Category (such as browsable or launcher");
+        stringBuilder.append(Constant.LINE_SEPARATOR);
+        stringBuilder.append("Above listed properties needed for most Intent.");
+        stringBuilder.append(Constant.LINE_SEPARATOR);
+        return stringBuilder.toString();
     }
 
 
