@@ -17,7 +17,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
-        android:text="Hello"
+        android:text=""
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,7 +33,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
-        android:text="World"
+        android:text=""
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1" />

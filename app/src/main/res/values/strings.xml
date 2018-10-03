@@ -32,4 +32,5 @@
 
     <string name="app_store">Open TCB app at Play Store</string>
     <string name="title_activity_user_overview">User Overview</string>
+    <string name="explain_intent">Explain Intent</string>
 </resources>

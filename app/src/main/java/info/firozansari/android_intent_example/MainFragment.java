@@ -39,6 +39,8 @@ public class MainFragment extends Fragment {
 
     public ItemAdapter itemAdapter;
 
+    AlertDialog.Builder builder;
+
     public MainFragment() {
     }
 
@@ -55,11 +57,8 @@ public class MainFragment extends Fragment {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setMessage(getIntentExplanationText());
-                builder.setCancelable(true);
+                builder = new AlertDialog.Builder(getActivity()).setMessage(getIntentExplanationText());
                 builder.show();
-
             }
         });
         ItemRecyclerView = (RecyclerView) mView.findViewById(R.id.item_recycler);
