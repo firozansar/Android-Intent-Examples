@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Android-Intent-Example</string>
+    <string name="app_name">Android Intent Examples</string>
     <string name="action_settings">Settings</string>
 
     <string name="dialer">Start dialer</string>
@@ -34,7 +34,7 @@
     <string name="app_store">Open TCB app at Play Store</string>
     <string name="title_activity_user_overview">User Overview</string>
     <string name="explain_intent">Explain Intent</string>
-    <string name="title_activity_create_user">CreateUserActivity</string>
+    <string name="title_activity_create_user">Create a user</string>
     <string name="create_notes">Create a note</string>
     <string name="show_wifi_settings">Show WIFI Settings</string>
 </resources>
