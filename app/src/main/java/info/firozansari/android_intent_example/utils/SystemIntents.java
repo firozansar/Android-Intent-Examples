@@ -3,6 +3,9 @@ package info.firozansari.android_intent_example.utils;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.provider.Settings;
+
+import com.google.android.gms.actions.NoteIntents;
 
 /**
  * Provides factory methods to create intents to do some system tasks such as opening the market app, ...
@@ -82,4 +85,12 @@ public class SystemIntents {
         intent.setType("file/*");
         return intent;
     }
+
+    /**
+     * Show Wifi serttings
+     */
+    public static Intent showWifiSettings() {
+        return new Intent(Settings.ACTION_WIFI_SETTINGS);
+    }
+
 }

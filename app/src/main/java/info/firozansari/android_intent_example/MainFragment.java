@@ -3,7 +3,6 @@ package info.firozansari.android_intent_example;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.os.Environment;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -92,12 +91,14 @@ public class MainFragment extends Fragment {
         // PhoneIntents
         demoItemList.add(new DemoItem(res.getString(R.string.dialer), PhoneIntents.newDialNumberIntent(null)));
         demoItemList.add(new DemoItem(res.getString(R.string.call_number), PhoneIntents.newCallNumberIntent("07957941679")));
-        demoItemList.add(new DemoItem(res.getString(R.string.dial_number), PhoneIntents.newDialNumberIntent("+07957941679")));
+        demoItemList.add(new DemoItem(res.getString(R.string.dial_number), PhoneIntents.newDialNumberIntent("07957941679")));
         demoItemList.add(new DemoItem(res.getString(R.string.send_sms_to), PhoneIntents.newSmsIntent(getActivity(), "this is a test SMS", "07957941679")));
         demoItemList.add(new DemoItem(res.getString(R.string.send_sms), PhoneIntents.newSmsIntent(getActivity(), "this is a test SMS")));
         demoItemList.add(new DemoItem(res.getString(R.string.pick_contact), PhoneIntents.newPickContactIntent()));
         // demoItemList.add(new DemoItem(res.getString(R.string.edit_contact), PhoneIntents.editContactIntent()));
         demoItemList.add(new DemoItem(res.getString(R.string.pick_contact_with_phone), PhoneIntents.newPickContactWithPhoneIntent()));
+        demoItemList.add(new DemoItem(res.getString(R.string.show_alarms), PhoneIntents.showAllAlarms()));
+        // demoItemList.add(new DemoItem(res.getString(R.string.create_notes), PhoneIntents.createNote("Test subject", "Some random texts")));
 
         // GeoIntents
         // demoItemList.add(new DemoItem(res.getString(R.string.map_of), GeoIntents.newMapsIntent("10 Downing Street, London", "Prime Minister's Residence")));
@@ -122,6 +123,7 @@ public class MainFragment extends Fragment {
         demoItemList.add(new DemoItem(res.getString(R.string.share), ShareIntents.newShareTextIntent("My subject", "My message", getString(R.string.share_dialog_title))));
 
         // SystemIntents
+        demoItemList.add(new DemoItem(res.getString(R.string.show_wifi_settings), SystemIntents.showWifiSettings()));
         demoItemList.add(new DemoItem(res.getString(R.string.app_store), SystemIntents.newGooglePlayIntent(getActivity(), "uk.co.topcashback.topcashback")));
         return demoItemList;
     }
@@ -137,13 +139,13 @@ public class MainFragment extends Fragment {
         stringBuilder.append(Constant.LINE_SEPARATOR);
         stringBuilder.append("The primary information contained in an Intent is the following:");
         stringBuilder.append(Constant.LINE_SEPARATOR);
-        stringBuilder.append("1. Component name");
+        stringBuilder.append(" 1. Component name");
         stringBuilder.append(Constant.LINE_SEPARATOR);
-        stringBuilder.append("2. Action (such as view or send");
+        stringBuilder.append(" 2. Action (such as view or send) ");
         stringBuilder.append(Constant.LINE_SEPARATOR);
-        stringBuilder.append("3. Data (URI or MIME type");
+        stringBuilder.append(" 3. Data (URI or MIME type) ");
         stringBuilder.append(Constant.LINE_SEPARATOR);
-        stringBuilder.append("4. Category (such as browsable or launcher");
+        stringBuilder.append(" 4. Category (such as browsable or launcher) ");
         stringBuilder.append(Constant.LINE_SEPARATOR);
         stringBuilder.append("Above listed properties needed for most Intent.");
         stringBuilder.append(Constant.LINE_SEPARATOR);

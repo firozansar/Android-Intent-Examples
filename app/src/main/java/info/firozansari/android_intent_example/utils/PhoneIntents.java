@@ -4,10 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
+import android.provider.AlarmClock;
 import android.provider.Contacts;
 import android.provider.ContactsContract;
 import android.provider.Telephony;
 import android.text.TextUtils;
+
+import com.google.android.gms.actions.NoteIntents;
 
 /**
  * Provides factory methods to create intents to send SMS, MMS and call phone numbers
@@ -185,6 +188,22 @@ public class PhoneIntents {
     public static Intent newPickContactWithPhoneIntent() {
 
         return newPickContactIntent(ContactsContract.CommonDataKinds.Phone.CONTENT_TYPE);
+    }
+
+    /**
+     * Edit a contact from phone book
+     */
+    public static Intent showAllAlarms() {
+        return new Intent(AlarmClock.ACTION_SHOW_ALARMS);
+    }
+
+    /**
+     * Create a note with a subject and text
+     */
+    public static Intent createNote(String subject, String text) {
+        return new Intent(NoteIntents.ACTION_CREATE_NOTE)
+                .putExtra(NoteIntents.EXTRA_NAME, subject)
+                .putExtra(NoteIntents.EXTRA_TEXT, text);
     }
 
 }

@@ -9,6 +9,7 @@
     <string name="send_sms">Send SMS</string>
     <string name="pick_contact">Pick a contact</string>
     <string name="edit_contact">Edit a contact</string>
+    <string name="show_alarms">Show alarms</string>
     <string name="pick_contact_with_phone">Pick a contact with phone</string>
 
     <string name="map_of">Prime Minister\'s Residence</string>
@@ -33,4 +34,7 @@
     <string name="app_store">Open TCB app at Play Store</string>
     <string name="title_activity_user_overview">User Overview</string>
     <string name="explain_intent">Explain Intent</string>
+    <string name="title_activity_create_user">CreateUserActivity</string>
+    <string name="create_notes">Create a note</string>
+    <string name="show_wifi_settings">Show WIFI Settings</string>
 </resources>

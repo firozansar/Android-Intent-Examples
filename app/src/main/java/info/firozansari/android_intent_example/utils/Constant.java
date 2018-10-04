@@ -7,4 +7,5 @@ public final class Constant {
     }
 
     public static final String LINE_SEPARATOR = "\n";
+    public static final String USER_NAME = "userName";
 }
