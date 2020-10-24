@@ -124,6 +124,7 @@ public class MainFragment extends Fragment {
 
         // SystemIntents
         demoItemList.add(new DemoItem(res.getString(R.string.show_wifi_settings), SystemIntents.showWifiSettings()));
+        demoItemList.add(new DemoItem(res.getString(R.string.show_nfc_settings), SystemIntents.showNfcSettings()));
         demoItemList.add(new DemoItem(res.getString(R.string.app_store), SystemIntents.newGooglePlayIntent(getActivity(), "uk.co.topcashback.topcashback")));
         return demoItemList;
     }

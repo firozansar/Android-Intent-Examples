@@ -37,5 +37,6 @@
     <string name="title_activity_create_user">Create a user</string>
     <string name="create_notes">Create a note</string>
     <string name="show_wifi_settings">Show WIFI Settings</string>
+    <string name="show_nfc_settings">Show NFC Settings</string>
     <string name="action_search">Search</string>
 </resources>

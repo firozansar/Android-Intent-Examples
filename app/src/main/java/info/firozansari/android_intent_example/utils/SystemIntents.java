@@ -93,4 +93,12 @@ public class SystemIntents {
         return new Intent(Settings.ACTION_WIFI_SETTINGS);
     }
 
+    /**
+     * Show Wifi serttings
+     */
+    public static Intent showNfcSettings() {
+        return new Intent(Settings.ACTION_NFC_SETTINGS);
+    }
+
+
 }
