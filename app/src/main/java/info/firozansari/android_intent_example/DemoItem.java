@@ -2,11 +2,6 @@ package info.firozansari.android_intent_example;
 
 import android.content.Intent;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 public class DemoItem {
 
     public String description;
