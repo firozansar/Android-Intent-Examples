@@ -20,6 +20,7 @@ class MainFragment : Fragment() {
     private var textView: TextView? = null
     var ItemRecyclerView: RecyclerView? = null
     var itemAdapter: ItemAdapter? = null
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val mView = inflater.inflate(R.layout.fragment_main, container, false)
@@ -37,23 +38,9 @@ class MainFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        Handler().postDelayed({ itemAdapter?.swapList(demoItems) }, 500)
+        itemAdapter?.swapList(demoItems)
     }
-    // PhoneIntents
-    // demoItemList.add(new DemoItem(res.getString(R.string.edit_contact), PhoneIntents.editContactIntent()));
-    // demoItemList.add(new DemoItem(res.getString(R.string.create_notes), PhoneIntents.createNote("Test subject", "Some random texts")));
 
-    // GeoIntents
-    // demoItemList.add(new DemoItem(res.getString(R.string.map_of), GeoIntents.newMapsIntent("10 Downing Street, London", "Prime Minister's Residence")));
-
-    // MediaIntents
-    // demoItemList.add(new DemoItem(res.getString(R.string.play_video_youtube), MediaIntents.newPlayYouTubeVideoIntent("b_yiWIXBI7o")));
-
-    // EmailIntents
-
-    // ShareIntents
-
-    // SystemIntents
     private val demoItems: List<DemoItem>
         private get() {
             val res = resources
