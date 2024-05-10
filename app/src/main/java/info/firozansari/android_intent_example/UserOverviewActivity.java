@@ -30,11 +30,8 @@ public class UserOverviewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_overview);
-
         setUpView();
-
         handleIntent();
-
     }
 
     private void handleIntent() {
@@ -126,9 +123,6 @@ public class UserOverviewActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         return super.onOptionsItemSelected(item);
     }
-
-
 }
