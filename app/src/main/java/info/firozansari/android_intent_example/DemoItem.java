@@ -2,6 +2,8 @@ package info.firozansari.android_intent_example;
 
 import android.content.Intent;
 
+import androidx.annotation.NonNull;
+
 public class DemoItem {
 
     public String description;
@@ -28,6 +30,7 @@ public class DemoItem {
         this.intent = intent;
     }
 
+    @NonNull
     @Override
     public String toString() {
         return description;
