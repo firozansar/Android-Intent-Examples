@@ -1,21 +1,19 @@
-package info.firozansari.android_intent_example.utils;
+package info.firozansari.android_intent_example.utils
 
-import android.content.ActivityNotFoundException;
-import android.content.Intent;
-import android.net.Uri;
-import android.provider.MediaStore;
-
-import java.io.File;
+import android.content.ActivityNotFoundException
+import android.content.Intent
+import android.net.Uri
+import android.provider.MediaStore
+import java.io.File
 
 /**
  * Provides factory methods to create intents to view / open / ... medias
  *
  */
-public class MediaIntents {
-
-    public static final String AUDIO_TYPE = "audio/*";
-    public static final String VIDEO_TYPE = "video/*";
-    public static final String IMAGE_TYPE = "image/*";
+object MediaIntents {
+    const val AUDIO_TYPE: String = "audio/*"
+    const val VIDEO_TYPE: String = "video/*"
+    const val IMAGE_TYPE: String = "image/*"
 
     /**
      * Open the media player to play the given media
@@ -23,8 +21,8 @@ public class MediaIntents {
      * @param file The file path of the media to play.
      * @return the intent
      */
-    public static Intent newPlayAudioFileIntent(File file) {
-        return newPlayMediaFileIntent(file, AUDIO_TYPE);
+    fun newPlayAudioFileIntent(file: File?): Intent {
+        return newPlayMediaFileIntent(file, AUDIO_TYPE)
     }
 
     /**
@@ -33,8 +31,8 @@ public class MediaIntents {
      * @param path The file path of the media to play.
      * @return the intent
      */
-    public static Intent newPlayAudioFileIntent(String path) {
-        return newPlayMediaFileIntent(path, AUDIO_TYPE);
+    fun newPlayAudioFileIntent(path: String?): Intent {
+        return newPlayMediaFileIntent(path, AUDIO_TYPE)
     }
 
     /**
@@ -43,8 +41,8 @@ public class MediaIntents {
      * @param url The URL of the media to play.
      * @return the intent
      */
-    public static Intent newPlayAudioIntent(String url) {
-        return newPlayMediaIntent(url, AUDIO_TYPE);
+    fun newPlayAudioIntent(url: String?): Intent {
+        return newPlayMediaIntent(url, AUDIO_TYPE)
     }
 
     /**
@@ -53,8 +51,8 @@ public class MediaIntents {
      * @param file The file path of the media to play.
      * @return the intent
      */
-    public static Intent newPlayImageFileIntent(File file) {
-        return newPlayMediaFileIntent(file, IMAGE_TYPE);
+    fun newPlayImageFileIntent(file: File?): Intent {
+        return newPlayMediaFileIntent(file, IMAGE_TYPE)
     }
 
     /**
@@ -63,8 +61,8 @@ public class MediaIntents {
      * @param path The file path of the media to play.
      * @return the intent
      */
-    public static Intent newPlayImageFileIntent(String path) {
-        return newPlayMediaFileIntent(path, IMAGE_TYPE);
+    fun newPlayImageFileIntent(path: String?): Intent {
+        return newPlayMediaFileIntent(path, IMAGE_TYPE)
     }
 
     /**
@@ -73,8 +71,8 @@ public class MediaIntents {
      * @param url The URL of the media to play.
      * @return the intent
      */
-    public static Intent newPlayImageIntent(String url) {
-        return newPlayMediaIntent(url, IMAGE_TYPE);
+    fun newPlayImageIntent(url: String?): Intent {
+        return newPlayMediaIntent(url, IMAGE_TYPE)
     }
 
     /**
@@ -83,8 +81,8 @@ public class MediaIntents {
      * @param file The file path of the media to play.
      * @return the intent
      */
-    public static Intent newPlayVideoFileIntent(File file) {
-        return newPlayMediaFileIntent(file, VIDEO_TYPE);
+    fun newPlayVideoFileIntent(file: File?): Intent {
+        return newPlayMediaFileIntent(file, VIDEO_TYPE)
     }
 
     /**
@@ -93,8 +91,8 @@ public class MediaIntents {
      * @param path The file path of the media to play.
      * @return the intent
      */
-    public static Intent newPlayVideoFileIntent(String path) {
-        return newPlayMediaFileIntent(path, VIDEO_TYPE);
+    fun newPlayVideoFileIntent(path: String?): Intent {
+        return newPlayMediaFileIntent(path, VIDEO_TYPE)
     }
 
     /**
@@ -103,8 +101,8 @@ public class MediaIntents {
      * @param url The URL of the media to play.
      * @return the intent
      */
-    public static Intent newPlayVideoIntent(String url) {
-        return newPlayMediaIntent(url, VIDEO_TYPE);
+    fun newPlayVideoIntent(url: String?): Intent {
+        return newPlayMediaIntent(url, VIDEO_TYPE)
     }
 
     /**
@@ -114,11 +112,11 @@ public class MediaIntents {
      *
      * @return the intent
      */
-    public static Intent newPlayYouTubeVideoIntent(String videoId) {
-        try {
-            return new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + videoId));
-        } catch (ActivityNotFoundException ex) {
-            return new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=" + videoId));
+    fun newPlayYouTubeVideoIntent(videoId: String): Intent {
+        return try {
+            Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:$videoId"))
+        } catch (ex: ActivityNotFoundException) {
+            Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=$videoId"))
         }
     }
 
@@ -129,8 +127,8 @@ public class MediaIntents {
      * @param type The mime type
      * @return the intent
      */
-    public static Intent newPlayMediaIntent(String url, String type) {
-        return newPlayMediaIntent(Uri.parse(url), type);
+    fun newPlayMediaIntent(url: String?, type: String?): Intent {
+        return newPlayMediaIntent(Uri.parse(url), type)
     }
 
     /**
@@ -140,8 +138,8 @@ public class MediaIntents {
      * @param type The mime type
      * @return the intent
      */
-    public static Intent newPlayMediaFileIntent(File file, String type) {
-        return newPlayMediaIntent(Uri.fromFile(file), type);
+    fun newPlayMediaFileIntent(file: File?, type: String?): Intent {
+        return newPlayMediaIntent(Uri.fromFile(file), type)
     }
 
     /**
@@ -151,8 +149,8 @@ public class MediaIntents {
      * @param type The mime type
      * @return the intent
      */
-    public static Intent newPlayMediaFileIntent(String path, String type) {
-        return newPlayMediaIntent(Uri.fromFile(new File(path)), type);
+    fun newPlayMediaFileIntent(path: String?, type: String?): Intent {
+        return newPlayMediaIntent(Uri.fromFile(File(path)), type)
     }
 
     /**
@@ -162,10 +160,10 @@ public class MediaIntents {
      * @param type The mime type
      * @return the intent
      */
-    public static Intent newPlayMediaIntent(Uri uri, String type) {
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setDataAndType(uri, type);
-        return intent;
+    fun newPlayMediaIntent(uri: Uri?, type: String?): Intent {
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.setDataAndType(uri, type)
+        return intent
     }
 
     /**
@@ -175,11 +173,13 @@ public class MediaIntents {
      * @param url the URL to open
      * @return the intent
      */
-    public static Intent newOpenWebBrowserIntent(String url) {
+    @JvmStatic
+    fun newOpenWebBrowserIntent(url: String): Intent {
+        var url = url
         if (!url.startsWith("https://") && !url.startsWith("http://")) {
-            url = "http://" + url;
+            url = "http://$url"
         }
-        return new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        return Intent(Intent.ACTION_VIEW, Uri.parse(url))
     }
 
     /**
@@ -189,10 +189,10 @@ public class MediaIntents {
      * @param tempFile the file that should be used to temporarily store the picture
      * @return the intent
      */
-    public static Intent newTakePictureIntent(File tempFile) {
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(tempFile));
-        return intent;
+    fun newTakePictureIntent(tempFile: File?): Intent {
+        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(tempFile))
+        return intent
     }
 
     /**
@@ -201,9 +201,9 @@ public class MediaIntents {
      *
      * @return the intent
      */
-    public static Intent newTakePictureIntent() {
-        Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-        return intent;
+    fun newTakePictureIntent(): Intent {
+        val intent = Intent("android.media.action.IMAGE_CAPTURE")
+        return intent
     }
 
     /**
@@ -211,9 +211,9 @@ public class MediaIntents {
      *
      * @return the intent
      */
-    public static Intent newSelectPictureIntent() {
-        Intent intent = new Intent(Intent.ACTION_PICK);
-        intent.setType("image/*");
-        return intent;
+    fun newSelectPictureIntent(): Intent {
+        val intent = Intent(Intent.ACTION_PICK)
+        intent.setType("image/*")
+        return intent
     }
 }

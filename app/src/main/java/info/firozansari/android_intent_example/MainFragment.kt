@@ -17,22 +17,24 @@ import java.util.*
 
 class MainFragment : Fragment() {
     private var mListener: OnFragmentInteractionListener? = null
-    private var textView: TextView? = null
-    var ItemRecyclerView: RecyclerView? = null
-    var itemAdapter: ItemAdapter? = null
+    private lateinit var textView: TextView
+    private lateinit var ItemRecyclerView: RecyclerView
+    private var itemAdapter: ItemAdapter? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val mView = inflater.inflate(R.layout.fragment_main, container, false)
         textView = mView.findViewById<View>(R.id.explain_tv) as TextView
-        textView?.setOnClickListener {
-            AlertDialog.Builder(activity!!).setMessage(intentExplanationText).show()
+        textView.setOnClickListener {
+            activity?.let { it1 -> AlertDialog.Builder(it1).setMessage(intentExplanationText).show() }
         }
         ItemRecyclerView = mView.findViewById<View>(R.id.item_recycler) as RecyclerView
         val recyclerLayoutManager = LinearLayoutManager(activity)
-        ItemRecyclerView!!.layoutManager = recyclerLayoutManager
-        itemAdapter = ItemAdapter(activity, mListener)
-        ItemRecyclerView!!.adapter = itemAdapter
+        ItemRecyclerView.layoutManager = recyclerLayoutManager
+        if (mListener != null) {
+            itemAdapter = activity?.let { ItemAdapter(it, mListener!!) }
+            ItemRecyclerView.adapter = itemAdapter
+        }
         return mView
     }
 
@@ -83,7 +85,8 @@ class MainFragment : Fragment() {
             // SystemIntents
             demoItemList.add(DemoItem(res.getString(R.string.show_wifi_settings), SystemIntents.showWifiSettings()))
             demoItemList.add(DemoItem(res.getString(R.string.show_nfc_settings), SystemIntents.showNfcSettings()))
-            demoItemList.add(DemoItem(res.getString(R.string.app_store), SystemIntents.newGooglePlayIntent(activity, "uk.co.topcashback.topcashback")))
+//            demoItemList.add(SystemIntents.newGooglePlayIntent(activity, "uk.co.topcashback.topcashback")
+//                ?.let { DemoItem(res.getString(R.string.app_store), it) })
             return demoItemList
         }
     private val intentExplanationText: String

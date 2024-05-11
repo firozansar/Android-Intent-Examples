@@ -59,6 +59,8 @@ dependencies {
     implementation(libs.coroutines.core)
     implementation(libs.coroutines.android)
 
+    implementation(libs.play.services.base)
+
     // Lifecycle
     implementation(libs.lifecycle)
     kapt(libs.lifecycle.compiler)
