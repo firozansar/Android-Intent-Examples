@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity(), OnFragmentInteractionListener {
         send.action = Intent.ACTION_SEND
         send.putExtra(Intent.EXTRA_TEXT, "Some random text to share!")
         send.type = "text/plain"
-        myShareActionProvider?.setShareIntent(send)
+        myShareActionProvider.setShareIntent(send)
         return true
     }
 
