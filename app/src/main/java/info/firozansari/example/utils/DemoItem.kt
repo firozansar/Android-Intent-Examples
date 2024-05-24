@@ -1,4 +1,4 @@
-package info.firozansari.android_intent_example
+package info.firozansari.example.utils
 
 import android.content.Intent
 

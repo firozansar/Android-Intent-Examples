@@ -1,4 +1,4 @@
-package info.firozansari.android_intent_example
+package info.firozansari.example.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,7 +10,8 @@ import androidx.appcompat.widget.ShareActionProvider
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.MenuItemCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import info.firozansari.android_intent_example.MainFragment.OnFragmentInteractionListener
+import info.firozansari.example.R
+import info.firozansari.example.ui.MainFragment.OnFragmentInteractionListener
 
 class MainActivity : AppCompatActivity(), OnFragmentInteractionListener {
     override fun onCreate(savedInstanceState: Bundle?) {

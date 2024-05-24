@@ -1,4 +1,4 @@
-package info.firozansari.android_intent_example.utils
+package info.firozansari.example.utils
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,9 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import info.firozansari.android_intent_example.DemoItem
-import info.firozansari.android_intent_example.MainFragment.OnFragmentInteractionListener
-import info.firozansari.android_intent_example.R
+import info.firozansari.example.R
+import info.firozansari.example.ui.MainFragment.OnFragmentInteractionListener
 
 class ItemAdapter(
     private val context: Context,

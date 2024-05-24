@@ -1,4 +1,4 @@
-package info.firozansari.android_intent_example
+package info.firozansari.example.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -13,7 +13,8 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.MenuItemCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
-import info.firozansari.android_intent_example.utils.Constant
+import info.firozansari.example.R
+import info.firozansari.example.utils.Constant
 
 class UserOverviewActivity : AppCompatActivity() {
     private var textView1: TextView? = null

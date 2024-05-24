@@ -1,4 +1,4 @@
-package info.firozansari.android_intent_example
+package info.firozansari.example.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,7 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
-import info.firozansari.android_intent_example.utils.Constant
+import info.firozansari.example.R
+import info.firozansari.example.utils.Constant
 
 class CreateUserActivity : AppCompatActivity() {
     private lateinit var userName: EditText
@@ -30,7 +31,7 @@ class CreateUserActivity : AppCompatActivity() {
 
         val fab = findViewById<View>(R.id.fab) as FloatingActionButton
         fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+            Snackbar.make(view, "Nothing to do", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
     }

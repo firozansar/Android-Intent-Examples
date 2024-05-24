@@ -4,10 +4,10 @@ compileSdk = "34"
 minSdk = "29"
 targetSdk = "34"
 kotlinVersion = "1.9.23"
-gradleVersion = "8.4.0"
+gradleVersion = "8.4.1"
 
 # Plugin versions
-androidGradlePluginVersion = "8.4.0"
+androidGradlePluginVersion = "8.4.1"
 
 #Lib versions
 appCompatVersion = "1.6.1"

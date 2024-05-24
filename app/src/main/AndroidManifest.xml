@@ -20,7 +20,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".MainActivity"
+            android:name="info.firozansari.example.ui.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
@@ -34,10 +34,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UserOverviewActivity"
+            android:name="info.firozansari.example.ui.UserOverviewActivity"
             android:exported="true"
             android:label="@string/title_activity_user_overview"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="info.firozansari.example.ui.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
@@ -46,10 +46,10 @@
             </intent-filter>
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.firozansari.android_intent_example.MainActivity" />
+                android:value="info.firozansari.android_intent_example.info.firozansari.example.MainActivity" />
         </activity>
         <activity
-            android:name=".CreateUserActivity"
+            android:name="info.firozansari.example.ui.CreateUserActivity"
             android:label="@string/title_activity_create_user"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>

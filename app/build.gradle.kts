@@ -12,11 +12,11 @@ plugins {
 }
 
 android {
-    namespace = "info.firozansari.android_intent_example"
+    namespace = "info.firozansari.example"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId = "info.firozansari.android_intent_example"
+        applicationId = "info.firozansari.example"
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
         versionCode = 2

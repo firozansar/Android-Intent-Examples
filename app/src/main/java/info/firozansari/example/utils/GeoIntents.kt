@@ -1,4 +1,4 @@
-package info.firozansari.android_intent_example.utils
+package info.firozansari.example.utils
 
 import android.content.Intent
 import android.net.Uri
