@@ -12,8 +12,8 @@ import com.google.android.material.snackbar.Snackbar
 import info.firozansari.android_intent_example.utils.Constant
 
 class CreateUserActivity : AppCompatActivity() {
-    private var userName: EditText? = null
-    private var submitBtn: Button? = null
+    private lateinit var userName: EditText
+    private lateinit var submitBtn: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +26,7 @@ class CreateUserActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         userName = findViewById<View>(R.id.username) as EditText
         submitBtn = findViewById<View>(R.id.submit_btn) as Button
-        submitBtn!!.setOnClickListener { finish() }
+        submitBtn.setOnClickListener { finish() }
 
         val fab = findViewById<View>(R.id.fab) as FloatingActionButton
         fab.setOnClickListener { view ->
@@ -37,7 +37,7 @@ class CreateUserActivity : AppCompatActivity() {
 
     override fun finish() {
         val intent = Intent()
-        intent.putExtra(Constant.USER_NAME, userName!!.text.toString())
+        intent.putExtra(Constant.USER_NAME, userName.text.toString())
         setResult(RESULT_OK, intent)
         super.finish()
     }
