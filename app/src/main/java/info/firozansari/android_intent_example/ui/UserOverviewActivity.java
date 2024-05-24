@@ -1,4 +1,4 @@
-package info.firozansari.android_intent_example;
+package info.firozansari.android_intent_example.ui;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,7 +8,6 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.core.view.MenuItemCompat;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
-import androidx.appcompat.widget.ShareActionProvider;
 import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import info.firozansari.android_intent_example.R;
 import info.firozansari.android_intent_example.utils.Constant;
 
 public class UserOverviewActivity extends AppCompatActivity {

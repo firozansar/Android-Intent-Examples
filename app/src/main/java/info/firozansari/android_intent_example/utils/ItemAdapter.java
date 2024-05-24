@@ -10,8 +10,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import info.firozansari.android_intent_example.DemoItem;
-import info.firozansari.android_intent_example.MainFragment;
+import info.firozansari.android_intent_example.ui.MainFragment;
 import info.firozansari.android_intent_example.R;
 
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>{

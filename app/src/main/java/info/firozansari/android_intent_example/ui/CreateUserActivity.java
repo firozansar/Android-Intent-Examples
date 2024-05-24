@@ -1,4 +1,4 @@
-package info.firozansari.android_intent_example;
+package info.firozansari.android_intent_example.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import info.firozansari.android_intent_example.R;
 import info.firozansari.android_intent_example.utils.Constant;
 
 public class CreateUserActivity extends AppCompatActivity {
@@ -29,21 +30,11 @@ public class CreateUserActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         userName = (EditText) findViewById(R.id.username);
         submitBtn = (Button) findViewById(R.id.submit_btn);
-        submitBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
+        submitBtn.setOnClickListener(view -> finish());
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show());
     }
 
     @Override
